@@ -9,10 +9,10 @@ All scenarios have been executed successfully. Visual proof is committed directl
 
 | Test Case ID | Scenario | Screenshot Proof | Video Recording Proof |
 | :--- | :--- | :---: | :---: |
-| **TC_PB_01** | Successful User Registration, Sign-In, and Balance Retrieval | [📸 View Screenshot](proof/screenshots/successful_user_registration,_sign-in,_and_balance_retrieval_passed.png) | [🎥 Watch Video](proof/videos/successful_user_registration,_sign-in,_and_balance_retrieval_passed.webm) |
-| **TC_PB_02** | Failed Registration - Password Mismatch validation | [📸 View Screenshot](proof/screenshots/failed_registration_-_password_mismatch_validation_passed.png) | [🎥 Watch Video](proof/videos/failed_registration_-_password_mismatch_validation_passed.webm) |
-| **TC_PB_03** | Failed Registration - Missing Required Fields validation | [📸 View Screenshot](proof/screenshots/failed_registration_-_missing_required_fields_validation_passed.png) | [🎥 Watch Video](proof/videos/failed_registration_-_missing_required_fields_validation_passed.webm) |
-| **TC_PB_04** | Failed Sign-In - Invalid username and password credentials | [📸 View Screenshot](proof/screenshots/failed_sign-in_-_invalid_username_and_password_credentials_passed.png) | [🎥 Watch Video](proof/videos/failed_sign-in_-_invalid_username_and_password_credentials_passed.webm) |
+| **TC_PB_01** | Successful User Registration, Sign-In, and Balance Retrieval | [📸 View Screenshot](proof/screenshots/successful_user_registration,_sign-in,_and_balance_retrieval_passed.png) | [🎥 Watch Video](proof/videos/successful_user_registration,_sign-in,_and_balance_retrieval_passed.mp4) |
+| **TC_PB_02** | Failed Registration - Password Mismatch validation | [📸 View Screenshot](proof/screenshots/failed_registration_-_password_mismatch_validation_passed.png) | [🎥 Watch Video](proof/videos/failed_registration_-_password_mismatch_validation_passed.mp4) |
+| **TC_PB_03** | Failed Registration - Missing Required Fields validation | [📸 View Screenshot](proof/screenshots/failed_registration_-_missing_required_fields_validation_passed.png) | [🎥 Watch Video](proof/videos/failed_registration_-_missing_required_fields_validation_passed.mp4) |
+| **TC_PB_04** | Failed Sign-In - Invalid username and password credentials | [📸 View Screenshot](proof/screenshots/failed_sign-in_-_invalid_username_and_password_credentials_passed.png) | [🎥 Watch Video](proof/videos/failed_sign-in_-_invalid_username_and_password_credentials_passed.mp4) |
 
 ---
 
