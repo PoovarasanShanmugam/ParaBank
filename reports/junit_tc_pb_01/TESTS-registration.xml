@@ -1,0 +1,196 @@
+<testsuite name="registration.ParaBank Account Registration, Sign-In, and Security Validation" tests="1" errors="0" failures="0" skipped="0" time="31.14578" timestamp="2026-05-23T10:00:40.541714" hostname="MSP.local"><testcase classname="registration.ParaBank Account Registration, Sign-In, and Security Validation" name="Successful User Registration, Sign-In, and Balance Retrieval" status="passed" time="31.14578"><system-out>
+<![CDATA[
+@scenario.begin
+
+  @TC_PB_01 @positive @registration @login
+  Scenario: Successful User Registration, Sign-In, and Balance Retrieval
+    Given the user opens the ParaBank application ... passed in 3.540s
+    When the user navigates to the registration page ... passed in 1.416s
+    And the user registers a new account with dynamic valid credentials ... passed in 18.012s
+    Then the registration confirmation message should contain "Your account was created successfully. You are now logged in." ... passed in 0.052s
+    When the user logs out of the application ... passed in 1.667s
+    And the user logs in with the newly registered credentials ... passed in 6.370s
+    Then the user should see their accounts overview dashboard ... passed in 0.045s
+    And the user logs the account balance displayed on the page ... passed in 0.044s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+
+[SCENARIO] Starting scenario: Successful User Registration, Sign-In, and Balance Retrieval
+[ENV] Starting browser context...
+[BROWSER] Initializing Playwright engine...
+[BROWSER] Launching CHROMIUM (Headless=False, SlowMo=500ms)...
+[BROWSER] Creating browser context...
+[BROWSER] Opening page viewport...
+
+==================================================
+          PLAYWRIGHT BROWSER LAUNCHED
+==================================================
+ Browser Engine    : CHROMIUM
+ Headless Mode     : False
+ Slow Motion Delay : 500 ms
+ Default Timeout   : 30000 ms
+ Keep Browser Open : False
+ Video Recording   : Enabled
+ Launch Status     : Asserted & Verified
+==================================================
+
+
+[SCENARIO] Finished scenario: Successful User Registration, Sign-In, and Balance Retrieval | Status: PASSED
+
+[ENV] Screenshot saved to: /Users/myfolder/ParaBank/proof/screenshots/successful_user_registration,_sign-in,_and_balance_retrieval_passed.png
+[ENV] Closing browser session...
+[ENV] Video recording saved to: /Users/myfolder/ParaBank/proof/videos/successful_user_registration,_sign-in,_and_balance_retrieval_passed.webm
+
+
+>>> [STEP] Given the user opens the ParaBank application
+[CONFIG] Active Environment: QA | Target URL: https://parabank.parasoft.com/parabank/index.htm?ConnType=JDBC
+[BASE PAGE] Navigating to: https://parabank.parasoft.com/parabank/index.htm?ConnType=JDBC
+
+================================================================================
+ VALIDATION REPORT: APPLICATION LANDING & HOMEPAGE OPEN
+================================================================================
+CHECKPOINT / COMPONENT              | EXPECTED                       | ACTUAL                         | STATUS
+-------------------------------------------------------------------------------------------------------------------
+Landing Page URL (contains)         | index.htm                      | https://parabank.parasoft.com/parabank/index.htm?ConnType=JDBC | [PASS]
+Landing Page HTML Title             | ParaBank | Welcome | Online Banking | ParaBank | Welcome | Online Banking | [PASS]
+================================================================================
+
+[SUCCESS] ParaBank homepage loaded and validated successfully.
+
+>>> [STEP] When the user navigates to the registration page
+[LOGIN PAGE] Clicking Register Link...
+[BASE PAGE] Successfully clicked element using: 'a:has-text('Register')'
+[REGISTER PAGE] Waiting for registration form to load...
+
+================================================================================
+ VALIDATION REPORT: REGISTRATION PAGE NAVIGATION
+================================================================================
+CHECKPOINT / COMPONENT              | EXPECTED                       | ACTUAL                         | STATUS
+-------------------------------------------------------------------------------------------------------------------
+Registration Page URL (contains)    | register.htm                   | https://parabank.parasoft.com/parabank/register.htm;jsessionid=C7304AB7AF07B7201C12A22C6A2CAC7E | [PASS]
+Registration Page HTML Title        | ParaBank | Register for Free Online Account Access | ParaBank | Register for Free Online Account Access | [PASS]
+================================================================================
+
+[SUCCESS] Navigated to Registration page and form loaded successfully.
+
+>>> [STEP] And the user registers a new account with dynamic valid credentials
+
+================================================================================
+          DYNAMIC USER REGISTRATION DATA CONTAINER (POJO)
+================================================================================
+  First Name  : Poovarasan
+  Last Name   : S
+  Address     : 105,Aarthi Apartment, T Nagar
+  City        : Chennai
+  State       : Tamil Nadu
+  Zip Code    : 600017
+  Phone Number: 9434951527
+  SSN         : 820-95-6530
+  Username    : pb_b58f58de61
+  Password    : Pass_44c5c391
+================================================================================
+
+[REGISTER PAGE] Waiting for registration form to load...
+[REGISTER PAGE] Registering user username: pb_b58f58de61
+[BASE PAGE] Successfully filled element using: 'form#customerForm input[id='customer.firstName']'
+[BASE PAGE] Successfully filled element using: 'form#customerForm input[id='customer.lastName']'
+[BASE PAGE] Successfully filled element using: 'form#customerForm input[id='customer.address.street']'
+[BASE PAGE] Successfully filled element using: 'form#customerForm input[id='customer.address.city']'
+[BASE PAGE] Successfully filled element using: 'form#customerForm input[id='customer.address.state']'
+[BASE PAGE] Successfully filled element using: 'form#customerForm input[id='customer.address.zipCode']'
+[BASE PAGE] Successfully filled element using: 'form#customerForm input[id='customer.phoneNumber']'
+[BASE PAGE] Successfully filled element using: 'form#customerForm input[id='customer.ssn']'
+[BASE PAGE] Successfully filled element using: 'form#customerForm input[id='customer.username']'
+[BASE PAGE] Successfully filled element using: 'form#customerForm input[id='customer.password']'
+[BASE PAGE] Successfully filled element using: 'form#customerForm input[id='repeatedPassword']'
+[REGISTER PAGE] Submitted registration form via Enter keypress successfully.
+[SUCCESS] Registration form submitted successfully.
+
+>>> [STEP] Then the registration confirmation message should contain 'Your account was created successfully. You are now logged in.'
+[BASE PAGE] Successfully retrieved text using: 'div[id='rightPanel'] p:has-text('Your account was created successfully')'
+[BASE PAGE] Successfully retrieved text using: 'div#rightPanel h1.title'
+
+================================================================================
+ VALIDATION REPORT: REGISTRATION SUCCESS PAGE VERIFICATION
+================================================================================
+CHECKPOINT / COMPONENT              | EXPECTED                       | ACTUAL                         | STATUS
+-------------------------------------------------------------------------------------------------------------------
+Registration Success URL            | register.htm                   | https://parabank.parasoft.com/parabank/register.htm | [PASS]
+Registration Success HTML Title     | ParaBank | Customer Created    | ParaBank | Customer Created    | [PASS]
+Welcome Heading Text                | Welcome pb_b58f58de61          | Welcome pb_b58f58de61          | [PASS]
+Success Message Content             | Your account was created successfully. You are now logged in. | Your account was created successfully. You are now logged in. | [PASS]
+================================================================================
+
+[SUCCESS] Registration confirmation and welcome header verified successfully.
+
+>>> [STEP] When the user logs out of the application
+[LOGIN PAGE] Checking active session for logout...
+[LOGIN PAGE] Active session found. Logging out...
+[BASE PAGE] Successfully clicked element using: 'a:has-text('Log Out')'
+
+================================================================================
+ VALIDATION REPORT: USER LOGOUT & SESSION TERMINATION
+================================================================================
+CHECKPOINT / COMPONENT              | EXPECTED                       | ACTUAL                         | STATUS
+-------------------------------------------------------------------------------------------------------------------
+Home Landing URL (contains)         | index.htm                      | https://parabank.parasoft.com/parabank/index.htm?ConnType=JDBC | [PASS]
+================================================================================
+
+[SUCCESS] Logged out and landed on home page successfully.
+
+>>> [STEP] And the user logs in with the newly registered credentials
+[DATA] Retrying login with username: pb_b58f58de61 and password: Pass_44c5c391
+[CONFIG] Active Environment: QA | Target URL: https://parabank.parasoft.com/parabank/index.htm?ConnType=JDBC
+[BASE PAGE] Navigating to: https://parabank.parasoft.com/parabank/index.htm?ConnType=JDBC
+[LOGIN PAGE] Performing login for user: pb_b58f58de61
+[BASE PAGE] Successfully filled element using: 'input[name='username']'
+[BASE PAGE] Successfully filled element using: 'input[name='password']'
+[BASE PAGE] Successfully clicked element using: 'input[value='Log In']'
+[SUCCESS] Credentials entered and login submitted.
+
+>>> [STEP] Then the user should see their accounts overview dashboard
+[ACCOUNTS PAGE] Waiting for Accounts Overview page to load...
+[BASE PAGE] Successfully retrieved text using: 'p.smallText'
+
+================================================================================
+ VALIDATION REPORT: ACCOUNTS OVERVIEW DASHBOARD VERIFICATION
+================================================================================
+CHECKPOINT / COMPONENT              | EXPECTED                       | ACTUAL                         | STATUS
+-------------------------------------------------------------------------------------------------------------------
+Dashboard URL (contains)            | overview.htm                   | https://parabank.parasoft.com/parabank/overview.htm | [PASS]
+Dashboard HTML Title (contains)     | ParaBank | Accounts Overview   | ParaBank | Accounts Overview   | [PASS]
+Left Panel Welcome Text             | Welcome Poovarasan S           | Welcome Poovarasan S           | [PASS]
+================================================================================
+
+[SUCCESS] Accounts overview page and session verified successfully.
+
+>>> [STEP] And the user logs the account balance displayed on the page
+[ACCOUNTS PAGE] Waiting for Accounts Overview page to load...
+[ACCOUNTS PAGE] Found 2 table rows. Extracting cell details...
+[ACCOUNTS PAGE] Waiting for Accounts Overview page to load...
+[ACCOUNTS PAGE] Total Balance identified: $515.50
+
+================================================================================
+                 PARABANK SECURE ACCOUNTS LEDGER
+================================================================================
+ 01. Account Reference : 20337
+     Ledger Balance    : $515.50
+     Available Fund    : $515.50
+--------------------------------------------------------------------------------
+ AUDITED TOTAL BALANCE IN PORTAL: $515.50
+================================================================================
+
+[SUCCESS] Account balances fetched, verified, and audited successfully.
+
+]]>
+</system-out><system-err>
+<![CDATA[
+Captured stderr:
+
+
+
+]]>
+</system-err></testcase></testsuite>

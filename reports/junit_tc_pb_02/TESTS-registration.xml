@@ -1,0 +1,114 @@
+<testsuite name="registration.ParaBank Account Registration, Sign-In, and Security Validation" tests="1" errors="0" failures="0" skipped="0" time="22.995958" timestamp="2026-05-23T10:00:32.393154" hostname="MSP.local"><testcase classname="registration.ParaBank Account Registration, Sign-In, and Security Validation" name="Failed Registration - Password Mismatch validation" status="passed" time="22.995958"><system-out>
+<![CDATA[
+@scenario.begin
+
+  @TC_PB_02 @negative @registration
+  Scenario: Failed Registration - Password Mismatch validation
+    Given the user opens the ParaBank application ... passed in 3.491s
+    When the user navigates to the registration page ... passed in 1.431s
+    And the user attempts registration with mismatched passwords ... passed in 18.041s
+    Then registration fails showing error "Passwords did not match." ... passed in 0.033s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+
+[SCENARIO] Starting scenario: Failed Registration - Password Mismatch validation
+[ENV] Starting browser context...
+[BROWSER] Initializing Playwright engine...
+[BROWSER] Launching CHROMIUM (Headless=False, SlowMo=500ms)...
+[BROWSER] Creating browser context...
+[BROWSER] Opening page viewport...
+
+==================================================
+          PLAYWRIGHT BROWSER LAUNCHED
+==================================================
+ Browser Engine    : CHROMIUM
+ Headless Mode     : False
+ Slow Motion Delay : 500 ms
+ Default Timeout   : 30000 ms
+ Keep Browser Open : False
+ Video Recording   : Enabled
+ Launch Status     : Asserted & Verified
+==================================================
+
+
+[SCENARIO] Finished scenario: Failed Registration - Password Mismatch validation | Status: PASSED
+
+[ENV] Screenshot saved to: /Users/myfolder/ParaBank/proof/screenshots/failed_registration_-_password_mismatch_validation_passed.png
+[ENV] Closing browser session...
+[ENV] Video recording saved to: /Users/myfolder/ParaBank/proof/videos/failed_registration_-_password_mismatch_validation_passed.webm
+
+
+>>> [STEP] Given the user opens the ParaBank application
+[CONFIG] Active Environment: QA | Target URL: https://parabank.parasoft.com/parabank/index.htm?ConnType=JDBC
+[BASE PAGE] Navigating to: https://parabank.parasoft.com/parabank/index.htm?ConnType=JDBC
+
+================================================================================
+ VALIDATION REPORT: APPLICATION LANDING & HOMEPAGE OPEN
+================================================================================
+CHECKPOINT / COMPONENT              | EXPECTED                       | ACTUAL                         | STATUS
+-------------------------------------------------------------------------------------------------------------------
+Landing Page URL (contains)         | index.htm                      | https://parabank.parasoft.com/parabank/index.htm?ConnType=JDBC | [PASS]
+Landing Page HTML Title             | ParaBank | Welcome | Online Banking | ParaBank | Welcome | Online Banking | [PASS]
+================================================================================
+
+[SUCCESS] ParaBank homepage loaded and validated successfully.
+
+>>> [STEP] When the user navigates to the registration page
+[LOGIN PAGE] Clicking Register Link...
+[BASE PAGE] Successfully clicked element using: 'a:has-text('Register')'
+[REGISTER PAGE] Waiting for registration form to load...
+
+================================================================================
+ VALIDATION REPORT: REGISTRATION PAGE NAVIGATION
+================================================================================
+CHECKPOINT / COMPONENT              | EXPECTED                       | ACTUAL                         | STATUS
+-------------------------------------------------------------------------------------------------------------------
+Registration Page URL (contains)    | register.htm                   | https://parabank.parasoft.com/parabank/register.htm;jsessionid=BA835A062129ABC9770EF57A188CB94C | [PASS]
+Registration Page HTML Title        | ParaBank | Register for Free Online Account Access | ParaBank | Register for Free Online Account Access | [PASS]
+================================================================================
+
+[SUCCESS] Navigated to Registration page and form loaded successfully.
+
+>>> [STEP] And the user attempts registration with mismatched passwords
+[REGISTER PAGE] Waiting for registration form to load...
+[REGISTER PAGE] Registering user username: pb_07fa94a624
+[BASE PAGE] Successfully filled element using: 'form#customerForm input[id='customer.firstName']'
+[BASE PAGE] Successfully filled element using: 'form#customerForm input[id='customer.lastName']'
+[BASE PAGE] Successfully filled element using: 'form#customerForm input[id='customer.address.street']'
+[BASE PAGE] Successfully filled element using: 'form#customerForm input[id='customer.address.city']'
+[BASE PAGE] Successfully filled element using: 'form#customerForm input[id='customer.address.state']'
+[BASE PAGE] Successfully filled element using: 'form#customerForm input[id='customer.address.zipCode']'
+[BASE PAGE] Successfully filled element using: 'form#customerForm input[id='customer.phoneNumber']'
+[BASE PAGE] Successfully filled element using: 'form#customerForm input[id='customer.ssn']'
+[BASE PAGE] Successfully filled element using: 'form#customerForm input[id='customer.username']'
+[BASE PAGE] Successfully filled element using: 'form#customerForm input[id='customer.password']'
+[BASE PAGE] Successfully filled element using: 'form#customerForm input[id='repeatedPassword']'
+[REGISTER PAGE] Submitted registration form via Enter keypress successfully.
+[SUCCESS] Registration form submitted with password mismatch.
+
+>>> [STEP] Then registration fails showing error 'Passwords did not match.'
+[BASE PAGE] Successfully retrieved text using: 'span.error'
+
+================================================================================
+ VALIDATION REPORT: REGISTRATION FAILURE - PASSWORD MISMATCH
+================================================================================
+CHECKPOINT / COMPONENT              | EXPECTED                       | ACTUAL                         | STATUS
+-------------------------------------------------------------------------------------------------------------------
+Registration Form URL (contains)    | register.htm                   | https://parabank.parasoft.com/parabank/register.htm | [PASS]
+Form Validation Error (contains)    | Passwords did not match.       | Passwords did not match.       | [PASS]
+================================================================================
+
+[SUCCESS] Registration password mismatch error successfully verified.
+
+]]>
+</system-out><system-err>
+<![CDATA[
+Captured stderr:
+
+
+
+]]>
+</system-err></testcase></testsuite>
